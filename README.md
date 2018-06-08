@@ -13,3 +13,29 @@ It’s my hope that the official Vapor project will add a template similar to th
 If you have already installed the Vapor toolbox, you can create a new Vapor project from this repo using the following command:
 
     vapor new MyProject --template=twostraws/vapor-clean
+
+
+## Project Description
+
+An HTTP Service which accepts a graph of people where egdes represent friendship relationships. It returns the suggested eges which would create direct friend relationships between two people who currently are at most one friend away - two people who are friends "Friend of a Friend."
+
+## Project Instruction
+
+Recieve as input an array of friend relationships.
+Return a set of arrays each representing a new suggested friend relationship. 
+
+Example input:
+
+    {"inList": [
+        {"friends": ["Albert", "Betty"]},
+        {"friends": ["Betty", "Cathy"]},
+        {"friends": ["Cathy", "Dennis"]},
+        {"friends": ["Dennis", "Albert"]},
+        {"friends": ["Tony", "Bruce"]}
+        ]}
+        
+ Example Output:
+    {"outList": [["Albert", :Cathy"], ["Betty", "Dennis"]]}
+    
+    
+    
