@@ -28,6 +28,8 @@ struct Output: Content {
 
 public func routes(_ router: Router) throws {
     router.post("foaf") { req -> InList in
+        
+        // The MOST IMPORTANT LINE req.content  the syncDecode allows you to get the actual object you want instead of a Future<> wrapped object.
         let data = try req.content.syncDecode(Friends.self)
         
         var namePairs = [[String]]()
